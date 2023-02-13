@@ -5,7 +5,7 @@ if($_SESSION['password']=='')
 {
     header("location: login.php");
 }
-include '../config/koneksi.php';
+include 'config/koneksi.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,86 +37,86 @@ include '../config/koneksi.php';
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-clinic-medical"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Rekam Medis</div>
-      </a>
+<!-- Sidebar - Brand -->
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+  <div class="sidebar-brand-icon rotate-n-15">
+    <i class="fas fa-clinic-medical"></i>
+  </div>
+  <div class="sidebar-brand-text mx-3">Rekam Medis</div>
+</a>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Dashboard</span></a>
-      </li>
+<!-- Nav Item - Dashboard -->
+<li class="nav-item active">
+  <a class="nav-link" href="index.php">
+    <i class="fas fa-fw fa-home"></i>
+    <span>Dashboard</span></a>
+</li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+<!-- Divider -->
+<hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Data Klinik
-      </div>
+<!-- Heading -->
+<!-- <div class="sidebar-heading">
+  Data Klinik
+</div> -->
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-diagnoses"></i>
-          <span>Pendataan</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Pendataan Klinik:</h6>
-            <a class="collapse-item" href="pasien.php">Data Pasien</a>
-            <a class="collapse-item" href="tenaga_medis.php">Data Tenaga Medis</a>
-            <a class="collapse-item" href="obat.php">Data Obat</a>
-          </div>
-        </div>
-      </li>
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-diagnoses"></i>
+    <span>Pendataan</span>
+  </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <!-- <h6 class="collapse-header">Pendataan Klinik:</h6> -->
+      <a class="collapse-item" href="pasien.php">Data Pasien</a>
+<!--       <a class="collapse-item" href="tenaga_medis.php">Data Tenaga Medis</a>
+      <a class="collapse-item" href="obat.php">Data Obat</a> -->
+    </div>
+  </div>
+</li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-list"></i>
-          <span>Rekam Medis</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Hasil Rekam:</h6>
-            <a class="collapse-item" href="rekam.php">Rekam Medis Pasien</a>
-          </div>
-        </div>
-      </li>
+<!-- Nav Item - Utilities Collapse Menu -->
+<!-- <li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+    <i class="fas fa-fw fa-list"></i>
+    <span>Rekam Medis</span>
+  </a>
+  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Hasil Rekam:</h6>
+      <a class="collapse-item" href="rekam.php">Rekam Medis Pasien</a>
+    </div>
+  </div>
+</li> -->
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+<!-- Divider -->
+<hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Table Data
-      </div>
+<!-- Heading -->
+<!-- <div class="sidebar-heading">
+  Table Data
+</div> -->
 
-      <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-         <i class="fas fa-fw fa-table"></i>
-         <span>Table</span>
-       </a>
-       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-         <div class="bg-white py-2 collapse-inner rounded">
-           <h6 class="collapse-header">Login Screens:</h6>
-           <a class="collapse-item" href="tab_pasien.php">Table Pasien</a>
-           <a class="collapse-item" href="tab_medis.php">Tabel Tenaga Medis</a>
-           <a class="collapse-item" href="tab_obat.php">Table Obat</a>
-           <a class="collapse-item" href="tab_rekam.php">Table Rekam Medis</a>
-         </div>
-       </div>
-     </li>
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+ <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+   <i class="fas fa-fw fa-table"></i>
+   <span>Table</span>
+ </a>
+ <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+   <div class="bg-white py-2 collapse-inner rounded">
+     <!-- <h6 class="collapse-header">Login Screens:</h6> -->
+     <a class="collapse-item" href="tab_pasien.php">Table Pasien</a>
+     <!-- <a class="collapse-item" href="tab_medis.php">Tabel Tenaga Medis</a>
+     <a class="collapse-item" href="tab_obat.php">Table Obat</a>
+     <a class="collapse-item" href="tab_rekam.php">Table Rekam Medis</a> -->
+   </div>
+ </div>
+</li>
 
 
       <!-- Sidebar Toggler (Sidebar) -->

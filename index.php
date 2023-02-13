@@ -15,25 +15,6 @@ $jum = $row['id'];
 
 
 
-$jumlah_produk=mysqli_query($conn,"SELECT COUNT(*) as id from tenagamedis");
-$row = mysqli_fetch_array($jumlah_produk);
-$jum_med = $row['id'];
-
-
-
-$jumlah_produk=mysqli_query($conn,"SELECT COUNT(*) as id from obat");
-$row = mysqli_fetch_array($jumlah_produk);
-$jum_bat = $row['id'];
-
-
-
-$jumlah_produk=mysqli_query($conn,"SELECT COUNT(*) as id from rekammedis");
-$row = mysqli_fetch_array($jumlah_produk);
-$jum_rek = $row['id'];
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -154,6 +154,10 @@ error_reporting(0);
           $sss = mysqli_query($conn, "select * from admin");
           $rrr = mysqli_fetch_array($sss);
 
+          $jumlah_produk=mysqli_query($conn,"SELECT COUNT(*) as id from pasien");
+$row = mysqli_fetch_array($jumlah_produk);
+$jum = $row['id'];
+
 
              ?>
 
@@ -220,10 +224,10 @@ error_reporting(0);
                    <div class="row mt-3">
 
 
-                   <div class="col-md-8  mt-4">
+                   <div class="col-md-8">
 
 
-           <h7 class="m-0 font-weight-bold">Kapasitas Pasien: <?php echo $kap; ?></h7><br>
+           <h7 class="m-0 font-weight-bold">Total Data Pasien : <?php echo $jum; ?></h7><br>
            <!-- <a href="export_pasien.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mt-1"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 
                    </div>
@@ -242,10 +246,10 @@ if(isset($_GET['hapus'])){
 
    if($pesan=="sukses"){
 
-     echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
-     echo "<div class='alert alert-danger mt-4 ml-5' role='alert'>";
-     echo "<p><center>Berhasil Menghapus</center></p>";
-     echo   "</div>";
+     echo "<div>";
+     echo "<div class='alert alert-danger mt-4'>";
+     echo "<center>Berhasil Menghapus</center>";
+     echo "</div>";
      echo "</div>";
 
 
@@ -271,9 +275,7 @@ if(isset($_GET['hapus'])){
                        <th scope="col">NIK</th>
                        <th scope="col">Nama Lengkap</th>
                        <th scope="col">Tanggal Lahir</th>
-                       <th scope="col">Kelamin</th>
                        <th scope="col">Alamat</th>
-                       <th scope="col">Nomor</th>
                        <th scope="col">Aksi</th>
 
                      </tr>
@@ -329,10 +331,8 @@ if(isset($_GET['hapus'])){
                        <td><?php echo $row['nik'] ?></td>
                        <td><?php echo $row['nama'] ?></td>
                        <td><?php echo $row['ttl'] ?></td>
-                       <td><?php echo $row['kelamin'] ?></td>
                        <td><?php echo $row['alamat'] ?></td>
-                       <td><?php echo $row['nomor'] ?></td>
-                       <td>&nbsp;<a href="edit_pasien.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-success">Edit</button></a> &nbsp; <a href="hapus_pasien.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a> &nbsp; <a href="detail_pasien.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></td>
+                       <td><center><a href="detail_pasien.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></center></td>
 
                      </tr>
 
@@ -341,9 +341,9 @@ if(isset($_GET['hapus'])){
                  <?php }}elseif(mysqli_num_rows($brg) <= 0 AND !$cari){
 
 
-                         echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
-                         echo "<div class='alert alert-danger mt-4 ml-5' role='alert'>";
-                         echo "<p><center>Data Anda Masih Kosong</center></p>";
+                         echo "<div>";
+                         echo "<div class='alert alert-danger mt-4'>";
+                         echo "<center>Data Anda Masih Kosong</center>";
                          echo "</div>";
                          echo "</div>";
 
