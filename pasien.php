@@ -213,22 +213,21 @@ include 'config/koneksi.php';
               <div class="row mb-4">
                 <div class="col">
                 <div class="form-outline">
-                  <input class="form-control" type="number" placeholder="No Pasien" name="nopasien" required/>
+                  <input class="form-control" type="number" min="2" placeholder="No Pasien" name="nopasien" required/>
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
-                  <input class="form-control" type="number" placeholder="NIK" name="nik" required/>
+                  <input class="form-control" type="number" min="15" placeholder="NIK" name="nik" required/>
                 </div>
-              </div>
-                
+              </div>  
               </div>
 
               
               <div class="row mb-4">
               <div class="col">
                   <div class="form-outline">
-                    <input class="form-control"  type="text" placeholder="Nama Lengkap" name="nama" required/>
+                    <input class="form-control" type="text" placeholder="Nama Lengkap" name="nama" required/>
                   </div>
                 </div>
               <div class="col">
@@ -293,13 +292,10 @@ $nomor = htmlspecialchars($_POST['nomor']);
          $alamat === $rew['alamat'];
          $nomor === $rew['nomor'];
 
-
-
-
-         echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
-               echo "<div class='alert alert-warning mt-4 ml-5' role='alert'>";
-              echo "<p><center>Data Yang Anda Kirim Sudah Tersedia</center></p>";
-               echo   "</div>";
+               echo "<div>";
+               echo "<div class='alert alert-warning mt-4'>";
+               echo "<center>Data Yang Anda Kirim Sudah Tersedia</center>";
+               echo "</div>";
                echo "</div>";
 
 
@@ -319,16 +315,16 @@ NULL,
   )");
 
 if($insert){
- echo "<div class='col-md-10 col-sm-12 col-xs-12'>";
- echo "<div class='alert alert-primary mt-4 ml-5' role='alert'>";
- echo "<p><center>Data Sudah Masuk</center></p>";
- echo   "</div>";
+ echo "<div>";
+ echo "<div class='alert alert-primary mt-4'>";
+ echo "<center>Data Sudah Masuk</center>";
+ echo "</div>";
  echo "</div>";
 }else{
- echo "<div class='col-md-10 col-sm-12 col-xs-12'>";
- echo "<div class='alert alert-danger mt-4 ml-5' role='alert'>";
- echo "<p><center>Data Gagal Masuk</center></p>";
- echo   "</div>";
+ echo "<div>";
+ echo "<div class='alert alert-danger mt-4'>";
+ echo "<center>Data Gagal Masuk</center>";
+ echo "</div>";
  echo "</div>";
 
 }

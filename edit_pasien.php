@@ -216,38 +216,39 @@ error_reporting(0);
 
 
         <form   method="post" name='edit'>
-          <div class="row ml-5 mb-2 mt-3">
+        <div class="row justify-content-center">
             <div class="col-md-6">
+              <b>No Pasien</b>
+                <input class="form-control" type="number" name='nopasien' placeholder="No Pasien"  value="<?php echo $d['nopasien']; ?>" required>
 
-       <P><b>Nick Pasien:</b></p>
-         <input class="form-control" type="number" name='nik' placeholder="Nik Baru..."  value="<?php echo $d['nik']; ?>" required>
+              <b>NIK</b>
+                <input class="form-control" type="number" name='nik' placeholder="NIK"  value="<?php echo $d['nik']; ?>" required>
 
-          <P><b>Nama Pasien:</b></p>
-          <input class="form-control" type="text" name='nama'  placeholder="Nama Baru..." value="<?php echo $d['nama']; ?>" required>
+              <b>Nama Lengkap</b>
+                <input class="form-control" type="text" name='nama' placeholder="Nama Lengkap" value="<?php echo $d['nama']; ?>" required>
 
-  <P><b>Jenis Kelamin Pasien:</b></p>
-          <select class="form-control" name='gander' required>
-          <option selected disabled value="">Jenis Kelamin</option>
-    <option value="Laki-Laki">Laki-Laki</option>
-    <option value="Perempuan">Perempuan</option>
-          </select>
+              <b>Tanggal Lahir</b>
+                <input class="form-control" type="date" name='ttl' placeholder="Tanggal Lahir" value="<?php echo $d['ttl']; ?>" required>
 
-          <P><b>Alamat Pasien:</b></p>
-          <input class="form-control" type="text" name='alamat' value="<?php echo $d['alamat']; ?>" placeholder="Alamat Baru..." required>
+              <b>Jenis Kelamin</b>
+                <select class="form-control" name='gander' required>
+                <option selected disabled value="">Jenis Kelamin</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
+                </select>
 
-          <P><b>Nomor Pasien:</b></p>
-          <input class="form-control" type="text" name='nomor' value="<?php echo $d['nomor']; ?>" placeholder="Nomor Baru..." required>
+              <b>Alamat</b>
+                <input class="form-control" type="text" name='alamat' value="<?php echo $d['alamat']; ?>" placeholder="Alamat" required>
 
-
-          </div>
-
+              <b>Nomor</b>
+                <input class="form-control" type="text" name='nomor' value="<?php echo $d['nomor']; ?>" placeholder="Nomor" required>
+            </div>
         </div>
+
         <div class="row ml-5 mb-4 mt-3">
-
-        <div class="col-md-5">
-        <button type="submit" class="btn btn-info" name='edit'>Update</button>&nbsp;<input type="reset" class="btn btn-danger"  value="Reset">
-        </div>
-
+          <div class="col-ml-5">
+            <button type="submit" class="btn btn-info" name='edit'>Update</button>
+          </div>
         </div>
 
         </form>
@@ -257,18 +258,20 @@ error_reporting(0);
 
           if(isset($_POST['edit'])){
 
+           $nopasien= htmlspecialchars($_POST['nopasien']);
            $nik= htmlspecialchars($_POST['nik']);
            $nama= htmlspecialchars($_POST['nama']);
+           $ttl= htmlspecialchars($_POST['ttl']);
            $gander= htmlspecialchars($_POST['gander']);
            $alamat= htmlspecialchars($_POST['alamat']);
            $nomor= htmlspecialchars($_POST['nomor']);
 
 
-
-
-         $edit = mysqli_query($conn, "UPDATE pasien SET
+        $edit = mysqli_query($conn, "UPDATE pasien SET
+       nopasien ='$nopasien',
        nik ='$nik',
        nama ='$nama',
+       ttl ='$ttl',
        kelamin ='$gander',
        alamat ='$alamat',
        nomor = '$nomor'
@@ -276,37 +279,21 @@ error_reporting(0);
             ");
 
           if($edit){
-
-
-
-                                        echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
-                                           echo "<div class='alert alert-primary mt-4 ml-5' role='alert'>";
-                                          echo "<p><center>Mengedit Data Sukses</center></p>";
-                                           echo   "</div>";
-                                           echo "</div>";
-
-          }else{
-
-
-                            echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
-                               echo "<div class='alert alert-danger mt-4 ml-5' role='alert'>";
-                              echo "<p><center>Mengedit Data Gagal</center></p>";
-                               echo   "</div>";
-                               echo "</div>";
-
+                                        echo "<div>";
+                                        echo "<div class='alert alert-primary mt-4'>";
+                                        echo "<center>Mengedit Data Sukses</center>";
+                                        echo "</div>";
+                                        echo "</div>";
+            }else{
+                              echo "<div>";
+                              echo "<div class='alert alert-danger mt-4'>";
+                              echo "<center>Mengedit Data Gagal</center>";
+                              echo "</div>";
+                              echo "</div>";
+            }
           }
-
-          }
-
-
-
       ?>
-
-
         </div>
-
-
-
         </div>
         <!-- /.container-fluid -->
 

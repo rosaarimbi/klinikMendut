@@ -203,7 +203,7 @@ $jum = $row['id'];
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-   <h6 class="m-0 font-weight-bold text-primary">Data Pasien Klinik:</h6>
+   <h6 class="m-0 font-weight-bold text-primary">Data Pasien Klinik</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -300,40 +300,24 @@ if(isset($_GET['hapus'])){
                        echo "<center>Data <b>$cari</b> Tidak Ditemukan</center>";
                        echo  "</div>";
                        echo "</div>";
-
-
                  }
-
-
-
-
                  	}else{
                  		$brg=mysqli_query($conn, "select * from pasien limit $start, $hal");
                  	}
-
-
-
-
-                 if(mysqli_num_rows($brg)){
-
-
-
-
-
-                      while($row = mysqli_fetch_array($brg)){
-
-
+                      $no_urut = 0;
+                      if(mysqli_num_rows($brg)){
+                        while($row = mysqli_fetch_array($brg)){
+                          $no_urut++;
                       ?>
                    <tbody>
                      <tr>
-                       <th scope="row"><?php echo $row['id'] ?></th>
+                       <th scope="row"><?php echo $no_urut ?></th>
                        <td><?php echo $row['nopasien'] ?></td>
                        <td><?php echo $row['nik'] ?></td>
                        <td><?php echo $row['nama'] ?></td>
                        <td><?php echo $row['ttl'] ?></td>
                        <td><?php echo $row['alamat'] ?></td>
                        <td><center><a href="detail_pasien.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></center></td>
-
                      </tr>
 
                    </tbody>

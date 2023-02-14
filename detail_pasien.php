@@ -224,49 +224,44 @@ error_reporting(0);
             <div class="col-md-10 col-sm-12 col-xs-12">
               <h2><center>Data Pasien</center></h2>
               <br>
-          	<table class="table">
+                <table class="table">
+                  <tr>
+                    <td>No Pasien</td>
+                    <td><?php echo $d['nopasien']; ?></td>
+                  </tr>
 
+                  <tr>
+                    <td>NIK Pasien</td>
+                    <td><?php echo $d['nik']; ?></td>
+                  </tr>
 
-              <tr>
-                <td>No Pasien</td>
-                <td><?php echo $d['nopasien']; ?></td>
-              </tr>
+                  <tr>
+                    <td>Nama Pasien</td>
+                    <td><?php echo $d['nama']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>Tanggal Lahir</td>
+                    <td><?php echo $d['ttl']; ?></td>
+                  </tr>
 
-              <tr>
-                <td>NIK Pasien</td>
-                <td><?php echo $d['nik']; ?></td>
-              </tr>
+                  <tr>
+                    <td>Jenis Kelamin</td>
+                    <td><?php echo $d['kelamin']; ?></td>
+                  </tr>
 
-              <tr>
-                <td>Nama Pasien</td>
-                <td><?php echo $d['nama']; ?></td>
-              </tr>
-              
-              <tr>
-                <td>Tanggal Lahir</td>
-                <td><?php echo $d['ttl']; ?></td>
-              </tr>
+                  <tr>
+                    <td>Alamat</td>
+                    <td><?php echo $d['alamat']; ?></td>
+                  </tr>
 
-              <tr>
-                <td>Jenis Kelamin</td>
-                <td><?php echo $d['kelamin']; ?></td>
-              </tr>
+                  <tr>
+                    <td>Nomor Handphone</td>
+                    <td><?php echo $d['nomor']; ?></td>
+                  </tr>
 
-              <tr>
-                <td>Alamat</td>
-                <td><?php echo $d['alamat']; ?></td>
-              </tr>
-
-              <tr>
-                <td>Nomor Handphone</td>
-                <td><?php echo $d['nomor']; ?></td>
-              </tr>
-
-
-
-
-          </table>
-          </div>
+                </table>
+            </div>
           </div>
 
        
