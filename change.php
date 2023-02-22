@@ -290,7 +290,7 @@ error_reporting(0);
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <a href="https://github.com/rosaarimbi" style="text-decoration: none;"><b>Rosa Arimbi</b></a></span>
+            <span>Copyright &copy;<b>Klinik Mendut</b></span>
           </div>
         </div>
       </footer>
